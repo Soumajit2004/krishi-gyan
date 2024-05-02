@@ -11,8 +11,8 @@ export default async function Home() {
     })
 
     const soilConditionText = () => {
-        const value = parseInt(sensorData.Spool_raw_Data)
-
+        const value = parseInt(sensorData["Soil_raw_Data"])
+        console.log(value)
         if (value < 370) {
             return "Highly Humid"
         } else if (value > 370 && value <= 600) {
