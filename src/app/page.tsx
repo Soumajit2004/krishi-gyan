@@ -10,8 +10,6 @@ export default async function Home() {
         lon: profileData.fieldLocation._long
     })
 
-    console.log(profileData, sensorData, weatherForecastData)
-
     const soilConditionText = () => {
         const value = parseInt(sensorData.Spool_raw_Data)
 
@@ -33,6 +31,7 @@ export default async function Home() {
                      id={"greeting"}>
                 <h1 className={"text-base-content text-4xl font-bold mb-5"}>{`Welcome, ${profileData.name}`}</h1>
             </section>
+
 
             {/*dashboard section*/}
             <section
