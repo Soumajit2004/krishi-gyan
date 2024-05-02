@@ -14,13 +14,13 @@ export default async function Home() {
         const value = parseInt(sensorData["Soil_raw_Data"])
 
         if (value < 370) {
-            return "Highly Humid"
+            return ["🌴", "Highly Humid"]
         } else if (value > 370 && value <= 600) {
-            return "Perfectly Humid"
+            return ["🌱", "Perfectly Humid"]
         } else if (value > 600 && value <= 1000) {
-            return "Dry"
+            return ["🌵", "Dry"]
         } else {
-            return "Severely Dehydrated"
+            return ["💀", "Severely Dehydrated"]
         }
     }
 
@@ -71,12 +71,13 @@ export default async function Home() {
                             <h4 className={"text-5xl font-bold"}>
                                 {`${parseInt(sensorData.SoilData)}%`}
                             </h4>
-                            <p className={"opacity-80"}>soil humidity</p>
+                            <p className={"opacity-80"}>soil moisture</p>
                         </div>
 
                         <div
                             className="data-card">
-                            <p className={"font-bold text-xl"}>{`soil is ${soilConditionText().toLocaleLowerCase()}`}</p>
+                            <p className={"bg-accent p-5 rounded-2xl text-4xl"}>{soilConditionText()[0]}</p>
+                            <p className={"font-bold text-xl"}>{`soil is ${soilConditionText()[1].toLocaleLowerCase()}`}</p>
                         </div>
                     </div>
                 </div>
