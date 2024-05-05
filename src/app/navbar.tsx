@@ -7,11 +7,7 @@ export default function Navbar() {
                 <div className="flex-1">
                     <Link className="text-base-content font-bold text-xl" href={"/"}>Krishi Gyan</Link>
                 </div>
-                <div className="flex-none">
-                    <ul className="menu menu-horizontal px-1">
-                        <li><Link className={"btn btn-primary"} href={"/profile"}>profile</Link></li>
-                    </ul>
-                </div>
+              
             </nav>
         </div>
     )
