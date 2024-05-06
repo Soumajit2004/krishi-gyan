@@ -40,7 +40,7 @@ export default async function Home() {
                 {/*live details card*/}
                 <div className="bg-base-200 p-5 rounded-3xl flex flex-col justify-between min-h-58">
                     <h2 className={"text-base-content font-bold text-xl"}>
-                        Live Measurements
+                        Live Field Measurements
                     </h2>
                     <div className={"grid md:grid-cols-3 gap-5 h-[80%]"}>
                         <div className="data-card">
