@@ -24,6 +24,8 @@ export default async function Home() {
         }
     }
 
+    console.log(sensorData)
+
     return (
         <main className="bg-base-100">
             {/*greeting section*/}
@@ -35,7 +37,7 @@ export default async function Home() {
 
             {/*dashboard section*/}
             <section
-                className={"container mx-auto lg:rounded-b-3xl rounded-t-3xl p-8 bg-base-300 gap-8 grid grid-cols-1 grid-rows-4 xl:grid-cols-2 xl:grid-rows-2"}>
+                className={"container mx-auto lg:rounded-b-3xl rounded-t-3xl p-2 gap-2 md:p-8 bg-base-300 md:gap-8 grid grid-cols-1 grid-rows-4 xl:grid-cols-2 xl:grid-rows-2"}>
 
                 {/*live details card*/}
                 <div className="bg-base-200 p-5 rounded-3xl flex flex-col justify-between min-h-58">
@@ -64,7 +66,7 @@ export default async function Home() {
                         Soil Measurements
                     </h2>
 
-                    <div className="grid md:grid-cols-2 h-[80%] gap-5">
+                    <div className="grid md:grid-cols-3 h-[80%] gap-5">
                         {/*soil humidity card*/}
                         <div
                             className="data-card">
@@ -73,7 +75,13 @@ export default async function Home() {
                             </h4>
                             <p className={"opacity-80"}>soil moisture</p>
                         </div>
-
+                        <div
+                            className="data-card">
+                            <h4 className={"text-5xl font-bold"}>
+                                {parseInt(sensorData.Pump_status) ? "🚿" : "🐪"}
+                            </h4>
+                            <p className={"opacity-80"}>pump status</p>
+                        </div>
                         <div
                             className="data-card">
                             <p className={"bg-accent p-5 rounded-2xl text-4xl"}>{soilConditionText()[0]}</p>
@@ -83,23 +91,24 @@ export default async function Home() {
                 </div>
 
                 {/*weather warning card*/}
-                <div className="p-5 justify-center items-center rounded-3xl bg-base-200 flex flex-col gap-5 row-span-2 xl:row-span-1 xl:col-span-2">
-                    <h2 className="text-base-content font-bold text-xl">5-Day Weather Forecast</h2>
                 <div
-                    className={"  grid xl:grid-cols-5 gap-5"}>
+                    className="p-5 justify-center items-center rounded-3xl bg-base-200 flex flex-col gap-5 row-span-2 xl:row-span-1 xl:col-span-2">
+                    <h2 className="text-base-content font-bold text-xl">5-Day Weather Forecast</h2>
+                    <div
+                        className={"  grid xl:grid-cols-5 gap-5"}>
 
-                    {
-                        weatherForecastData["DailyForecasts"].map(
-                            (dailyData: any, index: number) => {
-                                return <div key={index} className={"data-card px-2 max-h-40"}>
-                                    <h3 className={"text-3xl font-bold"}>{`${parseInt(dailyData["Temperature"]["Maximum"]["Value"])}°C / ${parseInt(dailyData["Temperature"]["Minimum"]["Value"])}°C`}</h3>
-                                    <p className={"opacity-80 text-center"}>{`${dailyData["Day"]["IconPhrase"]} during day, ${dailyData["Night"]["IconPhrase"]} during Night.`.toLowerCase()}</p>
-                                </div>
-                            })
-                    }
+                        {
+                            weatherForecastData["DailyForecasts"].map(
+                                (dailyData: any, index: number) => {
+                                    return <div key={index} className={"data-card px-2 max-h-40"}>
+                                        <h3 className={"text-3xl font-bold"}>{`${parseInt(dailyData["Temperature"]["Maximum"]["Value"])}°C / ${parseInt(dailyData["Temperature"]["Minimum"]["Value"])}°C`}</h3>
+                                        <p className={"opacity-80 text-center"}>{`${dailyData["Day"]["IconPhrase"]} during day, ${dailyData["Night"]["IconPhrase"]} during Night.`.toLowerCase()}</p>
+                                    </div>
+                                })
+                        }
+                    </div>
                 </div>
-                </div>
-                
+
             </section>
         </main>
     );
