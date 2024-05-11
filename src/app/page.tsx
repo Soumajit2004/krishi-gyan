@@ -83,8 +83,11 @@ export default async function Home() {
                 </div>
 
                 {/*weather warning card*/}
+                <div className="p-5 justify-center items-center rounded-3xl bg-base-200 flex flex-col gap-5 row-span-2 xl:row-span-1 xl:col-span-2">
+                    <h2 className="text-base-content font-bold text-xl">5-Day Weather Forecast</h2>
                 <div
-                    className={"bg-base-200 p-5 rounded-3xl row-span-2 xl:row-span-1 xl:col-span-2 grid xl:grid-cols-5 gap-5"}>
+                    className={"  grid xl:grid-cols-5 gap-5"}>
+
                     {
                         weatherForecastData["DailyForecasts"].map(
                             (dailyData: any, index: number) => {
@@ -95,6 +98,8 @@ export default async function Home() {
                             })
                     }
                 </div>
+                </div>
+                
             </section>
         </main>
     );
