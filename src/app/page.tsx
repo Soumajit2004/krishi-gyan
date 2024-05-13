@@ -13,11 +13,11 @@ export default async function Home() {
     const soilConditionText = () => {
         const value = parseInt(sensorData["Soil_raw_Data"])
 
-        if (value < 370) {
+        if (value < 80) {
             return ["🌴", "Highly Humid"]
-        } else if (value > 370 && value <= 600) {
+        } else if (value >85  && value <=200 ) {
             return ["🌱", "Perfectly Humid"]
-        } else if (value > 600 && value <= 1000) {
+        } else if (value > 200 && value <= 280) {
             return ["🌵", "Dry"]
         } else {
             return ["💀", "Severely Dehydrated"]
