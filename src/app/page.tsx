@@ -21,7 +21,7 @@ export default async function Home() {
             return ["🌱", "Perfectly Humid"]
         } else if (value > 200 && value <= 280) {
             return ["🌵", "Dry"]
-        } else if (value > 281){
+        } else {
             return ["💀", "Severely Dehydrated"]
         }
     }
