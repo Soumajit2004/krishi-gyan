@@ -87,7 +87,7 @@ export default async function Home() {
                             <div
                                 className="data-card">
                                 <p className={"bg-accent p-5 rounded-2xl text-4xl"}>{soilConditionText()[0]}</p>
-                                <p className={"font-bold text-xl"}>{`soil is ${soilConditionText()[1].toLocaleLowerCase()}`}</p>
+                                <p className={"opacity-80"}>{`soil is ${soilConditionText()[1].toLocaleLowerCase()}`}</p>
                             </div>
                         </div>
                     </div>
