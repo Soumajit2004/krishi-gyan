@@ -57,7 +57,7 @@ export default async function Home() {
                             </div>
                             <div className="data-card">
                                 <h3 className={"text-5xl font-bold"}>{parseInt(sensorData.RainData) ? "🌧️" : "☀️"}</h3>
-                                <p className={"opacity-80"}>precipitation</p>
+                                <p className={"opacity-80"}>precipitation Status</p>
                             </div>
                         </div>
                     </div>
